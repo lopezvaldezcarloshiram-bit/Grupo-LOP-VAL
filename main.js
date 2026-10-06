@@ -162,13 +162,8 @@
     var c = BRAND.contact || {};
     var phone = $("[data-contact=phone]");
     var email = $("[data-contact=email]");
-    var social = $("[data-contact=social]");
     if (phone && c.phone) { phone.textContent = c.phone; phone.href = "tel:" + c.phone.replace(/[^\d+]/g, ""); }
     if (email && c.email) { email.textContent = c.email; email.href = "mailto:" + c.email; }
-    if (social && c.social) {
-      social.textContent = c.socialLabel || c.social.replace(/^https?:\/\/(www\.)?/, "");
-      social.href = c.social; social.target = "_blank"; social.rel = "noopener";
-    }
   }
 
   /* ----- Contact form: opens WhatsApp or e-mail with the message ----- */

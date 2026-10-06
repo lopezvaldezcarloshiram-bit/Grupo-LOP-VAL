@@ -451,6 +451,10 @@ section[id] { scroll-margin-top: 70px; }
 .footer__inner { display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center; }
 .footer__tag { margin: 0; font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--on-dark); }
 .footer__meta { margin: 0; font-size: 13px; letter-spacing: .04em; }
+.footer__end { display: grid; gap: 10px; justify-items: end; }
+.footer__social { display: flex; gap: 20px; }
+.footer__social a { color: var(--gold); text-decoration: none; font-size: 14px; font-weight: 600; border-bottom: 1px solid transparent; transition: border-color .3s; }
+.footer__social a:hover { border-color: currentColor; }
 
 /* ==========================================================================
    RESPONSIVE
@@ -465,6 +469,7 @@ section[id] { scroll-margin-top: 70px; }
   .value:nth-child(n+3) { border-top: 1px solid var(--line-dark); }
   .consult__grid, .contact__grid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; text-align: left; }
+  .footer__end { justify-items: start; }
 }
 
 @media (max-width: 860px) {
