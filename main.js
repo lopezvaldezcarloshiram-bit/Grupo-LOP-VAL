@@ -182,7 +182,7 @@
       if (!ok) { note.textContent = "Completa tu nombre y mensaje, por favor."; return; }
 
       var d = new FormData(form);
-      var text = "Hola Grupo Lopval, soy " + d.get("nombre") +
+      var text = "Hola Grupo LopVal, soy " + d.get("nombre") +
         (d.get("empresa") ? " de " + d.get("empresa") : "") +
         ".\nMe interesa: " + d.get("interes") + ".\n\n" + d.get("mensaje");
       var c = BRAND.contact || {};
