@@ -400,6 +400,7 @@ a.trader:hover { background: var(--navy); }
   border-bottom: 1px solid currentColor;
 }
 .card__link:hover { color: var(--accent-2); }
+.card__chips + .card__link { margin-top: 18px; }
 
 /* ==========================================================================
    CONSULTING
