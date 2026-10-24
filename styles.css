@@ -459,6 +459,10 @@ section[id] { scroll-margin-top: 70px; }
 .footer__meta { margin: 0; font-size: 13px; letter-spacing: .04em; }
 .footer__end { display: grid; gap: 10px; justify-items: end; }
 .footer__social { display: flex; gap: 20px; }
+.footer__legal { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line-dark); display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 13px; color: var(--on-dark-2); }
+.footer__legal p { margin: 0; }
+.footer__legal strong { color: #fff; font-weight: 600; }
+.footer__legal a { color: inherit; white-space: nowrap; }
 .footer__social a { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; border-bottom: 1px solid transparent; transition: border-color .3s; }
 .footer__social a:hover { border-color: currentColor; }
 
