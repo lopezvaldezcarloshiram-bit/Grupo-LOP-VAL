@@ -316,19 +316,22 @@
         input.closest(".field").classList.toggle("is-invalid", bad);
         if (bad) ok = false;
       });
-      if (!ok) { note.textContent = "Completa tu nombre y mensaje, por favor."; return; }
+      if (!ok) { note.textContent = "Completa los campos marcados con *, por favor."; return; }
 
-      var d = new FormData(form);
-      var text = "Hola Grupo LopVal, soy " + d.get("nombre") +
-        (d.get("empresa") ? " de " + d.get("empresa") : "") +
-        ".\nMe interesa: " + d.get("interes") + ".\n\n" + d.get("mensaje");
+      // Build the quote request from every filled field, in form order.
+      var lines = ["Hola Grupo LopVal, quiero solicitar una cotización:", ""];
+      $$("input, textarea, select", form).forEach(function (input) {
+        var value = input.value.trim();
+        if (value && input.name) lines.push("• " + input.name + ": " + value);
+      });
+      var text = lines.join("\n");
       var c = BRAND.contact || {};
 
       if (c.whatsapp) {
         window.open("https://wa.me/" + c.whatsapp + "?text=" + encodeURIComponent(text), "_blank", "noopener");
         note.textContent = "Abrimos WhatsApp con tu mensaje. ¡Gracias!";
       } else if (c.email) {
-        window.location.href = "mailto:" + c.email + "?subject=" + encodeURIComponent("Contacto desde el sitio web") + "&body=" + encodeURIComponent(text);
+        window.location.href = "mailto:" + c.email + "?subject=" + encodeURIComponent("Solicitud de cotización") + "&body=" + encodeURIComponent(text);
         note.textContent = "Abrimos tu correo con el mensaje listo para enviar.";
       } else {
         note.textContent = "Muy pronto habilitaremos este formulario. Mientras tanto, usa los datos de contacto.";
